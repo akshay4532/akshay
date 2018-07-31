@@ -1,0 +1,25 @@
+package com.example.hp.game
+
+import android.content.Intent
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import android.os.Handler
+
+class MainActivity : AppCompatActivity() {
+
+    var delay : Long = 2000
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        var handler= Handler()
+        var rundata= Runnable {
+            var intent= Intent(this,Main2Activity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        handler.postDelayed(rundata,2000)
+
+
+    }
+}
